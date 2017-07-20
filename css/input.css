@@ -1,0 +1,181 @@
+/*-------------------------------------
+    Input and Textarea
+-------------------------------------*/
+
+.input-wrapper {
+    float: left;
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.input-wrapper textarea,
+.input-wrapper input[type="text"],
+.input-wrapper input[type="password"],
+.input-wrapper input[type="email"],
+.input-wrapper input[type="number"] {
+    border: none;
+    background: transparent;
+    height: 24px;
+    font-size: 14px;
+    line-height: 14px;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.input-wrapper textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 60px;
+    resize: none;
+}
+
+.input-wrapper textarea:focus,
+.input-wrapper input[type="text"]:focus,
+.input-wrapper input[type="password"]:focus,
+.input-wrapper input[type="email"]:focus,
+.input-wrapper input[type="number"]:focus {
+    outline: none;
+}
+
+.input-wrapper .float-text {
+    position: absolute;
+    bottom: calc(100% - 40px);
+    font-size: 14px;
+    z-index: -1;
+}
+
+.input-wrapper .input-line,
+.input-wrapper .animate-line {
+    position: absolute;
+    width: 100%;
+}
+
+.input-wrapper .input-line {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.input-wrapper .float-text {
+    -webkit-transition: 0.2s all cubic-bezier(.26, .28, .42, .78);
+    -moz-transition: 0.2s all cubic-bezier(.26, .28, .42, .78);
+    -ms-transition: 0.2s all cubic-bezier(.26, .28, .42, .78);
+    -o-transition: 0.2s all cubic-bezier(.26, .28, .42, .78);
+    transition: 0.2s all cubic-bezier(.26, .28, .42, .78);
+}
+
+.input-wrapper.focus .animate-line {
+    -webkit-transition: 0.6s all cubic-bezier(.4, .19, .51, .98);
+    -moz-transition: 0.6s all cubic-bezier(.4, .19, .51, .98);
+    -ms-transition: 0.6s all cubic-bezier(.4, .19, .51, .98);
+    -o-transition: 0.6s all cubic-bezier(.4, .19, .51, .98);
+    transition: 0.6s all cubic-bezier(.4, .19, .51, .98);
+}
+
+.input-wrapper.blur .animate-line {
+    transition-duration: 0.8s;
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+}
+
+.input-wrapper .animate-line {
+    height: 2px;
+    bottom: -2px;
+    background: #0078D7;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: left center 0;
+    -moz-transform-origin: left center 0;
+    -o-transform-origin: left center 0;
+    -ms-transform-origin: left center 0;
+    transform-origin: left center 0;
+    /*opacity: 0;*/
+}
+
+.input-wrapper.blur .animate-line,
+.input-wrapper.focus .animate-line {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.input-wrapper.blur .animate-line {
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+}
+
+.input-wrapper.text-top .float-text,
+.input-wrapper.focus .float-text {
+    bottom: calc(100% - 15px);
+    left: 0;
+    font-size: 12px;
+}
+
+/*-------------------------------------
+   Radio And Checkbox
+-------------------------------------*/
+input[type="radio"]{
+    pointer-events: none;
+    display: none;
+}
+
+input[type="radio"] + label {
+    padding-left: 30px;
+    height: 25px;
+    font-size: 14px;
+    line-height: 23px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input[type="radio"] + label::before,
+input[type="radio"] + label::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    -webkit-transition: 0.5s all cubic-bezier(.35,.12,0,.98);
+    -moz-transition: 0.5s all cubic-bezier(.35,.12,0,.98);
+    -ms-transition: 0.5s all cubic-bezier(.35,.12,0,.98);
+    -o-transition: 0.5s all cubic-bezier(.35,.12,0,.98);
+    transition: 0.5s all cubic-bezier(.35,.12,0,.98);
+}
+
+input[type="radio"] + label::before {
+    border: 2px solid rgb(0, 120, 215);
+}
+
+input[type="radio"] + label::after {
+    background: #0078D7;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    left:2px;
+    top:2px;
+}
+
+input[type="radio"]:checked + label::after {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
